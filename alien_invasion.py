@@ -6,6 +6,7 @@ class AlienInvasion:
         pygame.init()
         self.screen = pygame.display.set_mode((1200,800))
         pygame.display.set_caption("Alien Invasion")
+        self.clock = pygame.time.Clock()
     def run_game(self):
         """开始游戏的主循环"""
         while True:
@@ -15,6 +16,8 @@ class AlienInvasion:
                     sys.exit()
             # 让最近绘制的屏幕可见
             pygame.display.flip()
+            # 控制游戏帧率为 60 FPS
+            self.clock.tick(60)
 if __name__ == "__main__":
     # 创建游戏实例并运行游戏
     ai = AlienInvasion()
