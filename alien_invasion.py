@@ -28,7 +28,10 @@ class AlienInvasion:
             # 侦听键盘和鼠标事件
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    sys.exit()            
+                    sys.exit()                
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RIGHT:
+                        self.ship.rect.x += 1
 
     def _update_screen(self):
         """更新屏幕上的图像，并切换到新屏幕"""
