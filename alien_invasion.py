@@ -5,7 +5,9 @@ from ship import Ship
 class AlienInvasion:
     """管理游戏资源和行为的类"""
     def __init__(self):
+        # Pygame 库全局初始化，一次性启动 Pygame 所有内置模块
         pygame.init()
+        # .display = Pygame 里专门管窗口 / 画面的模块
         pygame.display.set_caption("Alien Invasion")
         self.settings = Settings()
         self.clock = pygame.time.Clock()        
