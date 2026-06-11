@@ -22,7 +22,7 @@ class Ship:
         # 更新飞船的属性x的值，而不是外接矩形的属性x的值
         if self.moving_right and self.rect.right < self.screen_rect.right:
               self.x += self.settings.ship_speed
-        if self.moving_left and self.rect_left > 0:
+        if self.moving_left and self.rect.left > 0:
               self.x -= self.settings.ship_speed
         # 根据self.x的值更新rect的值
         self.rect.x = self.x
