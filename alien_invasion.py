@@ -33,8 +33,13 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self.bullets.update()
+            # 删除已消失的子弹
+            for bullet in self.bullets.copy():
+                if bullet.rect.bottom <= 0:
+                    self.bullets.remove(bullet)
+                    # # 验证子弹确实被删除
+                    # print(len(self.bullets))
             self._update_screen()
-
             # 控制游戏帧率为 60 FPS
             self.clock.tick(60)
 
