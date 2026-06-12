@@ -21,7 +21,7 @@ class Bullet(Sprite):
     def update(self):
         """向上移动子弹"""
         # 更新子弹的位置
-        self.y -= self.setting.bullet_speed
+        self.y -= self.settings.bullet_speed
         # 更新子弹表示子弹的rect的位置
         self.rect.y = self.y
 
