@@ -1,18 +1,29 @@
 import sys
 import pygame
+
 from settings import Settings
+
 from ship import Ship
+
 class AlienInvasion:
     """管理游戏资源和行为的类"""
     def __init__(self):
         # Pygame 库全局初始化，一次性启动 Pygame 所有内置模块
         pygame.init()
+
+        self.settings = Settings()
+
+        # 全屏运行
+        self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+        self.settings.screen_width = self.screen.get_rect().width
+        self.settings.screen_height = self.screen.get_rect().height
+        
         # .display = Pygame 里专门管窗口 / 画面的模块
         pygame.display.set_caption("Alien Invasion")
-        self.settings = Settings()
+        
         self.clock = pygame.time.Clock()        
-        self.screen = pygame.display.set_mode(
-             (self.settings.screen_width,self.settings.screen_height))
+        # self.screen = pygame.display.set_mode(
+        #      (self.settings.screen_width,self.settings.screen_height))
         self.ship = Ship(self)
 
     def run_game(self):
@@ -21,6 +32,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_screen()
+
             # 控制游戏帧率为 60 FPS
             self.clock.tick(60)
 
@@ -41,7 +53,7 @@ class AlienInvasion:
                 self.ship.moving_right = True
             elif event.key == pygame.K_LEFT:
                  self.ship.moving_left = True
-            elif event.key == pygame.K_q:
+            elif event.key == pygame.K_ESCAPE:
                  sys.exit()
 
     def _check_keyup_events(self,event):
