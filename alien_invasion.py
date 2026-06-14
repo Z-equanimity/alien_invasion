@@ -105,11 +105,14 @@ class AlienInvasion:
         # 再不断添加，直到没有空间添加外星人位置，外星人的间距为外星人的宽度
         current_x = alien_width
         while current_x < (self.settings.screen_width - 2*alien_width):
-            new_alien = Alien(self)
-            new_alien.x = current_x
-            new_alien.rect.x = current_x
-            self.aliens.add(new_alien)
+            self._creat_alien(current_x)
             current_x += 2 * alien_width
+
+    def _creat_alien(self,x_position):
+        new_alien = Alien(self)
+        new_alien.x = x_position
+        new_alien.rect.x = x_position
+        self.aliens.add(new_alien)
 
 if __name__ == "__main__":
     # 创建游戏实例并运行游戏
