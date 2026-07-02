@@ -15,3 +15,5 @@ class Settings:
         self.bullet_color = (60,60,60)
         # 允许同时出现的子弹的数量
         self.bullets_allowed = 3
+        # 外星人设置
+        self.alien_speed = 1.0
