@@ -164,7 +164,7 @@ class AlienInvasion:
         # 检测外星人和飞船之间的碰撞
         if pygame.sprite.spritecollideany(self.ship,self.aliens):
             # print("Ship hit!!!")
-            self._ship_hit
+            self._ship_hit()
 
     def _ship_hit(self):
         """响应飞船和外星人的碰撞"""
@@ -182,10 +182,7 @@ class AlienInvasion:
         # 暂停
         sleep(1)
 
-    def center_ship(self):
-        """将飞船放在屏幕底部的中央"""
-        self.rect.midbottom = self.screen_rect.midbottom
-        self.x = float(self.rect.x)
+    
 
 if __name__ == "__main__":
     # 创建游戏实例并运行游戏
