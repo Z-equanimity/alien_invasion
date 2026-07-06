@@ -7,9 +7,9 @@ class Settings:
         self.screen_width = 900
         self.screen_height = 675
         # 飞船的设置        
-        self.ship_limit = 3
+        self.ship_limit = 2
         # 子弹的设置
-        self.bullet_width = 3000
+        self.bullet_width = 8
         self.bullet_height = 3
         self.bullet_color = (60,60,60)
         # 允许同时出现的子弹的数量
