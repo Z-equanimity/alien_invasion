@@ -94,6 +94,7 @@ class AlienInvasion:
             # 重置游戏统计信息
             self.stats.reset_stats()
             self.sb.prep_score()
+            self.sb.prep_level()
             self.game_active = True
 
             # 清空外星人列表和子弹列表
@@ -156,6 +157,8 @@ class AlienInvasion:
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _create_fleet(self):
         """创建一个外星人舰队"""

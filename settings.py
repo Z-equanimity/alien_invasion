@@ -9,7 +9,7 @@ class Settings:
         # 飞船的设置        
         self.ship_limit = 3
         # 子弹的设置
-        self.bullet_width = 3
+        self.bullet_width = 3000
         self.bullet_height = 3
         self.bullet_color = (60,60,60)
         # 允许同时出现的子弹的数量
